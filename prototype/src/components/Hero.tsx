@@ -52,7 +52,7 @@ const Hero = () => {
               onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
               className="group border-2 border-gray-600 text-white px-10 py-5 rounded-2xl font-bold text-xl hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 transform hover:-translate-y-2"
             >
-              Explore Features
+              Projects Submitted
             </button>
           </div>
 
