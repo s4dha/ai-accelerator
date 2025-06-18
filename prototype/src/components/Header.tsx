@@ -33,12 +33,21 @@ const Header = () => {
             >
               Features
             </button>
-            <button 
-              onClick={() => scrollToSection('partnership')}
-              className="text-gray-300 hover:text-white transition-colors"
+
+
+            <Link
+            to="/faq"
+            className="text-gray-300 hover:text-white transition-colors"
             >
               FAQ
-            </button>
+              </Link>
+
+
+
+
+
+
+          
             <Link
               to="/submit-use-case"
               className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-0.5"

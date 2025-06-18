@@ -5,6 +5,7 @@ import SubmitUseCasePage from './pages/SubmitUseCasePage'
 import RemoveTediumPage from './pages/RemoveTediumPage'
 import DriveInnovationPage from './pages/DriveInnovationPage'
 import WorkSmarterPage from './pages/WorkSmarterPage'
+import FAQPage from './pages/FAQPage'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/remove-tedium" element={<RemoveTediumPage />} />
           <Route path="/drive-innovation" element={<DriveInnovationPage />} />
           <Route path="/work-smarter" element={<WorkSmarterPage />} />
+          <Route path="/faq" element={<FAQPage />} />
         </Routes>
       </div>
     </Router>
