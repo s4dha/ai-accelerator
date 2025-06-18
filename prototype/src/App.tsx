@@ -6,6 +6,7 @@ import RemoveTediumPage from './pages/RemoveTediumPage'
 import DriveInnovationPage from './pages/DriveInnovationPage'
 import WorkSmarterPage from './pages/WorkSmarterPage'
 import FAQPage from './pages/FAQPage'
+import ProjectsSubmittedPage from './pages/ProjectsSubmittedPage'
 
 function App() {
   return (
@@ -18,10 +19,9 @@ function App() {
           <Route path="/drive-innovation" element={<DriveInnovationPage />} />
           <Route path="/work-smarter" element={<WorkSmarterPage />} />
           <Route path="/faq" element={<FAQPage />} />
+          <Route path="/projects-submitted" element={<ProjectsSubmittedPage />} />
         </Routes>
       </div>
     </Router>
-  )
-}
 
 export default App
