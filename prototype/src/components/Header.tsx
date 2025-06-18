@@ -37,7 +37,7 @@ const Header = () => {
               onClick={() => scrollToSection('partnership')}
               className="text-gray-300 hover:text-white transition-colors"
             >
-              Partnership
+              FAQ
             </button>
             <Link
               to="/submit-use-case"
