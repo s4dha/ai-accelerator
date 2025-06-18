@@ -4,7 +4,7 @@ import Hero from '../components/Hero'
 import VideoIntro from '../components/VideoIntro'
 import Features from '../components/Features'
 import Timeline from '../components/Timeline'
-import Partnership from '../components/Partnership'
+import Prizes from '../components/Prizes'
 import Footer from '../components/Footer'
 
 const HomePage = () => {
@@ -15,7 +15,7 @@ const HomePage = () => {
       <VideoIntro />
       <Features />
       <Timeline />
-      <Partnership />
+      <Prizes />
       <Footer />
     </>
   )
