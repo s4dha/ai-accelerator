@@ -9,8 +9,8 @@ const Footer = () => {
             <p>Last Updated 18 June 2025</p>
           </div>
           <div className="flex space-x-4 mt-4 sm:mt-0">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="https://www.tech.gov.sg/privacy" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Privacy Statement</a>
+            <a href="https://www.tech.gov.sg/terms-of-use" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Terms of Use</a>
           </div>
         </div>
       </footer>
