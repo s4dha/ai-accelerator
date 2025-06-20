@@ -32,7 +32,7 @@ export default function FAQPage() {
     },
     {
       question: 'Who is behind the AI-Accelerator program?',
-      answer: '{build} is run by GovTech, supported by mentors, problem sponsors, and tech enablers from the public sector.'
+      answer: 'AI-volution is run by GovTech, supported by mentors, problem sponsors, and tech enablers from the public sector.'
     },
     {
       question: 'How do I get help if I’m stuck?',

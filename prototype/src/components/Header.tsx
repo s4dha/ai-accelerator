@@ -16,22 +16,24 @@ const Header = () => {
   return (
     <header className="bg-black/95 backdrop-blur-sm border-b border-gray-800 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">AI</span>
-            </div>
-            <span className="text-white font-bold text-xl">SCG AI-volution</span>
-          </Link>
+        <div className="flex items-center justify-between h-26">
+            {/* Logo */}
+              <Link to="/" className="flex items-center space-x-2">
+              <img
+                src="/websitelogo_new.png"
+                alt="SCG AI-volution Logo"
+                className="w-24 h-28 object-contain"
+              />
+              <span className="text-white font-bold text-xl">SCG AI-volution</span>
+            </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <button 
-              onClick={() => scrollToSection('features')}
+              onClick={() => scrollToSection('timeline')}
               className="text-gray-300 hover:text-white transition-colors"
             >
-              Features
+              Timeline
             </button>
 
 
@@ -41,13 +43,7 @@ const Header = () => {
             >
               FAQ
               </Link>
-
-
-
-
-
-
-          
+        
             <Link
               to="/submit-use-case"
               className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-0.5"
