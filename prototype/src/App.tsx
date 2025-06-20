@@ -7,6 +7,7 @@ import DriveInnovationPage from './pages/DriveInnovationPage'
 import WorkSmarterPage from './pages/WorkSmarterPage'
 import FAQPage from './pages/FAQPage'
 import ProjectsSubmittedPage from './pages/ProjectsSubmittedPage'
+import DepartmentDashboard from './components/DepartmentDashboard'
 
 function App() {
   return (
@@ -20,10 +21,11 @@ function App() {
           <Route path="/work-smarter" element={<WorkSmarterPage />} />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/projects-submitted" element={<ProjectsSubmittedPage />} />
+          <Route path="/dashboard" element={<DepartmentDashboard />} />
         </Routes>
       </div>
     </Router>
   )
 }
 
-export default App 
+export default App

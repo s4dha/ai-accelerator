@@ -71,12 +71,6 @@ const Header = () => {
               >
                 Features
               </button>
-              <button
-                onClick={() => scrollToSection('partnership')}
-                className="block px-3 py-2 text-gray-300 hover:text-white transition-colors w-full text-left"
-              >
-                Partnership
-              </button>
               <Link
                 to="/submit-use-case"
                 onClick={() => setIsMenuOpen(false)}

@@ -52,23 +52,25 @@ const Hero = () => {
               to="/projects-submitted"
               className="group border-2 border-gray-600 text-white px-10 py-5 rounded-2xl font-bold text-xl hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 transform hover:-translate-y-2"
             >
-              Projects Submitted
+              Explore Projects !
             </Link>
           </div>
-
           {/* Stats or Social Proof */}
           <div className="pt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
-              <div className="text-4xl font-bold text-white mb-2">10x</div>
-              <div className="text-gray-400">Faster Innovation</div>
+              <div className="text-4xl font-bold text-white mb-2">110+</div>
+              <div className="text-gray-400">Survey Responses</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-white mb-2">90%</div>
-              <div className="text-gray-400">Less Tedium</div>
+              <div className="text-4xl font-bold text-white mb-2">2.75</div>
+              <div className="text-gray-400">
+                Days/Week on<br />
+                Repetitive Tasks
+              </div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-white mb-2">∞</div>
-              <div className="text-gray-400">Smarter Decisions</div>
+              <div className="text-gray-400">Possibilities</div>
             </div>
           </div>
         </div>
@@ -76,5 +78,4 @@ const Hero = () => {
     </section>
   )
 }
-
 export default Hero
