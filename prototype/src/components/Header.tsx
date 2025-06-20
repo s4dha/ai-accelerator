@@ -25,10 +25,10 @@ const Header = () => {
                 className="w-24 h-28 object-contain"
               />
               <span className="font-bold text-xl">
+                <span className="text-white"> SCG </span>
                 <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
-                  SCG
+                  AiCCELERATE
                 </span>
-                <span className="text-white"> AiCCELERATE</span>
               </span>
             </Link>
 
