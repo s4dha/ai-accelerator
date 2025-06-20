@@ -24,7 +24,12 @@ const Header = () => {
                 alt="SCG AI-volution Logo"
                 className="w-24 h-28 object-contain"
               />
-              <span className="text-white font-bold text-xl">SCG AiCCELERATE</span>
+              <span className="font-bold text-xl">
+                <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
+                  SCG
+                </span>
+                <span className="text-white"> AiCCELERATE</span>
+              </span>
             </Link>
 
           {/* Desktop Navigation */}
