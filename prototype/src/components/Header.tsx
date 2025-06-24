@@ -18,7 +18,21 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-26">
             {/* Logo */}
-              <Link to="/" className="flex items-center space-x-2">
+              <Link 
+                to="/" 
+                className="flex items-center space-x-2"
+                onClick={(e) => {
+                  // Prevent default link behavior
+                  e.preventDefault();
+                  // Navigate to home page
+                  window.location.href = '/';
+                  // Scroll to top
+                  window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                  });
+                }}
+              >
               <img
                 src="/websitelogo_new.png"
                 alt="SCG AI-volution Logo"
@@ -41,6 +55,12 @@ const Header = () => {
               Timeline
             </button>
 
+            <Link
+              to="/featured-projects"
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              Featured Projects
+            </Link>
 
             <Link
             to="/faq"
@@ -76,6 +96,13 @@ const Header = () => {
               >
                 Features
               </button>
+              <Link
+                to="/featured-projects"
+                onClick={() => setIsMenuOpen(false)}
+                className="block px-3 py-2 text-gray-300 hover:text-white transition-colors w-full text-left"
+              >
+              Featured Case Studies
+              </Link>
               <Link
                 to="/submit-use-case"
                 onClick={() => setIsMenuOpen(false)}

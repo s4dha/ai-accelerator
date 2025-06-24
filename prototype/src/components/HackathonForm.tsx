@@ -18,6 +18,8 @@ interface FormData {
   expectedBenefits: string
   keyRisks: string
   timeline: string
+  areasInvolved: string[]
+  division: string
 }
 
 const HackathonForm = () => {
@@ -31,8 +33,28 @@ const HackathonForm = () => {
     proposedSolution: '',
     expectedBenefits: '',
     keyRisks: '',
-    timeline: ''
+    timeline: '',
+    areasInvolved: [],
+    division: ''
   })
+
+  const divisions = [
+    'Digital Governance',
+    'Finance',
+    'People & Org',
+    'Strat Plans & Transformation',
+    'Comms & Marketing',
+    'Org Excellence',
+    'Partnerships & Engagement',
+    'Legal',
+    'Procurement'
+  ]
+
+  const areas = [
+    'Automation',
+    'Innovation',
+    'Efficiency'
+  ]
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
@@ -72,6 +94,8 @@ const HackathonForm = () => {
     if (!formData.expectedBenefits.trim()) newErrors.expectedBenefits = 'Expected benefits are required'
     if (!formData.keyRisks.trim()) newErrors.keyRisks = 'Key risks and mitigation are required'
     if (!formData.timeline.trim()) newErrors.timeline = 'Implementation timeline is required'
+    if (formData.areasInvolved.length === 0) newErrors.areasInvolved = 'Please select at least one area'
+    if (!formData.division.trim()) newErrors.division = 'Please select your division'
 
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
@@ -104,7 +128,9 @@ const HackathonForm = () => {
           proposedSolution: '',
           expectedBenefits: '',
           keyRisks: '',
-          timeline: ''
+          timeline: '',
+          areasInvolved: [],
+          division: ''
         })
         setSubmitStatus('idle')
       }, 3000)
@@ -165,11 +191,24 @@ const HackathonForm = () => {
   return (
     <section id="hackathon" className="py-20 bg-black">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className="mb-12">
+          <div className="flex justify-center mb-8">
+            <img
+              src="/websitelogo_new.png"
+              alt="SCG AI-volution Logo"
+              className="w-24 h-28 object-contain"
+            />
+            <span className="font-bold text-xl ml-4">
+              <span className="text-white"> SCG </span>
+              <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
+                AiCCELERATE
+              </span>
+            </span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center">
             Submit Your AI Use Case
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto text-center">
             Share your innovative AI solution and join the hackathon. Help us accelerate the future of human-AI collaboration.
           </p>
         </div>
@@ -191,13 +230,36 @@ const HackathonForm = () => {
 
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Team Information Section */}
-            <div className="space-y-6">
-              <div className="flex items-center space-x-2 pb-2 border-b border-gray-700">
-                <Users className="h-5 w-5 text-blue-400" />
-                <h3 className="text-xl font-semibold text-white">Team Information</h3>
-              </div>
+              {/* Team Information */}
+              <div className="space-y-6">
+                <div className="flex items-center space-x-2 pb-2 border-b border-gray-700">
+                  <Users className="h-5 w-5 text-blue-400" />
+                  <h3 className="text-xl font-semibold text-white">Team Information</h3>
+                </div>
 
-              {/* Team Name */}
+                {/* Division */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                    Which division are you from?
+                    {errors.division && (
+                      <span className="text-red-400 text-sm ml-2">{errors.division}</span>
+                    )}
+                  </label>
+                  <select
+                    value={formData.division}
+                    onChange={(e) => setFormData(prev => ({ ...prev, division: e.target.value }))}
+                    className="w-full bg-gray-800 border border-gray-700 text-white rounded-md p-2 focus:ring-blue-500 focus:border-blue-500"
+                  >
+                    <option value="">Select your division</option>
+                    {divisions.map((division) => (
+                      <option key={division} value={division}>
+                        {division}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Team Name */}
               <div>
                 <label htmlFor="teamName" className="block text-sm font-medium text-gray-300 mb-2">
                   Team Name *
@@ -335,6 +397,44 @@ const HackathonForm = () => {
                 />
                 {errors.problemStatement && <p className="mt-1 text-sm text-red-400">{errors.problemStatement}</p>}
               </div>
+
+                {/* Areas Involved */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                    Which areas does this involve? (Select all that apply)
+                    {errors.areasInvolved && (
+                      <span className="text-red-400 text-sm ml-2">{errors.areasInvolved}</span>
+                    )}
+                  </label>  
+                  <div className="space-y-2">
+                    {areas.map((area) => (
+                      <div key={area} className="flex items-center space-x-2">
+                        <input
+                          type="checkbox"
+                          id={`area-${area.toLowerCase()}`}
+                          checked={formData.areasInvolved.includes(area)}
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setFormData(prev => ({
+                                ...prev,
+                                areasInvolved: [...prev.areasInvolved, area]
+                              }))
+                            } else {
+                              setFormData(prev => ({
+                                ...prev,
+                                areasInvolved: prev.areasInvolved.filter(a => a !== area)
+                              }))
+                            }
+                          }}
+                          className="rounded border-gray-700 text-blue-500 focus:ring-2 focus:ring-blue-500"
+                        />
+                        <label htmlFor={`area-${area.toLowerCase()}`} className="text-gray-300">
+                          {area}
+                        </label>
+                      </div>
+                    ))}
+                  </div>
+                </div>
 
               {/* Pain Points */}
               <div>
