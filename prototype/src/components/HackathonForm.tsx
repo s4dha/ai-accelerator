@@ -230,12 +230,11 @@ const HackathonForm = () => {
 
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Team Information Section */}
-              {/* Team Information */}
-              <div className="space-y-6">
-                <div className="flex items-center space-x-2 pb-2 border-b border-gray-700">
-                  <Users className="h-5 w-5 text-blue-400" />
-                  <h3 className="text-xl font-semibold text-white">Team Information</h3>
-                </div>
+            <div className="space-y-6">
+              <div className="flex items-center space-x-4 pb-4 border-b border-gray-700">
+                <Users className="h-6 w-6 text-blue-400" />
+                <h3 className="text-xl font-semibold text-white">Team Information</h3>
+              </div>
 
                 {/* Division */}
                 <div>
@@ -248,7 +247,7 @@ const HackathonForm = () => {
                   <select
                     value={formData.division}
                     onChange={(e) => setFormData(prev => ({ ...prev, division: e.target.value }))}
-                    className="w-full bg-gray-800 border border-gray-700 text-white rounded-md p-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full bg-gray-800 border border-gray-700 text-white rounded-lg p-3 focus:ring-blue-500 focus:border-blue-500 text-lg"
                   >
                     <option value="">Select your division</option>
                     {divisions.map((division) => (
@@ -270,7 +269,7 @@ const HackathonForm = () => {
                   name="teamName"
                   value={formData.teamName}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-6 py-4 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
                   placeholder="Enter your team name"
                 />
                 {errors.teamName && <p className="mt-1 text-sm text-red-400">{errors.teamName}</p>}
@@ -287,7 +286,7 @@ const HackathonForm = () => {
                   name="contactEmail"
                   value={formData.contactEmail}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-6 py-4 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
                   placeholder="team@example.com"
                 />
                 {errors.contactEmail && <p className="mt-1 text-sm text-red-400">{errors.contactEmail}</p>}
@@ -303,10 +302,10 @@ const HackathonForm = () => {
                     <button
                       type="button"
                       onClick={addTeamMember}
-                      className="flex items-center space-x-2 text-blue-400 hover:text-blue-300 transition-colors"
+                      className="flex items-center space-x-3 text-blue-400 hover:text-blue-300 transition-colors px-4 py-2 rounded-lg border border-blue-400/20"
                     >
-                      <Plus className="h-4 w-4" />
-                      <span className="text-sm">Add Member</span>
+                      <Plus className="h-5 w-5" />
+                      <span className="text-base">Add Member</span>
                     </button>
                   )}
                 </div>
@@ -322,9 +321,9 @@ const HackathonForm = () => {
                           <button
                             type="button"
                             onClick={() => removeTeamMember(index)}
-                            className="text-red-400 hover:text-red-300 transition-colors"
+                            className="text-red-400 hover:text-red-300 transition-colors p-2 rounded-lg border border-red-400/20"
                           >
-                            <Trash2 className="h-4 w-4" />
+                            <Trash2 className="h-5 w-5" />
                           </button>
                         )}
                       </div>
@@ -336,7 +335,7 @@ const HackathonForm = () => {
                             placeholder="Full Name"
                             value={member.name}
                             onChange={(e) => handleTeamMemberChange(index, 'name', e.target.value)}
-                            className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                            className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base"
                           />
                           {errors.teamMembers && errors.teamMembers[index]?.name && (
                             <p className="mt-1 text-xs text-red-400">{errors.teamMembers[index].name}</p>
@@ -391,8 +390,8 @@ const HackathonForm = () => {
                   name="problemStatement"
                   value={formData.problemStatement}
                   onChange={handleChange}
-                  rows={4}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-vertical"
+                  rows={6}
+                  className="w-full px-6 py-4 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-vertical text-lg"
                   placeholder="Clearly define the problem you're solving..."
                 />
                 {errors.problemStatement && <p className="mt-1 text-sm text-red-400">{errors.problemStatement}</p>}
